@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./assets/fonts/geist-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./assets/fonts/playfair-display-latin-700.woff2") format("woff2");
+}
+
+:root {
+  --background: #f5f0eb;
+  --foreground: #1a4a4e;
+  --card: #ffffff;
+  --card-foreground: #1a4a4e;
+  --border: #1a4a4e1f;
+  --input: #1a4a4e1f;
+  --ring: #2a7a80;
+  --primary: #1a4a4e;
+  --primary-foreground: #f5f0eb;
+  --muted: #eaf0f0;
+  --muted-foreground: #21292d99;
+  --destructive: #e40014;
+}
+
+:root[data-theme="dark"] {
+  --background: #000000;
+  --foreground: #e8ecef;
+  --card: #101415;
+  --card-foreground: #e8ecef;
+  --border: #e8ecef14;
+  --input: #e8ecef1f;
+  --ring: #3a9da4;
+  --primary: #3a9da4;
+  --primary-foreground: #000000;
+  --muted: #161c1e;
+  --muted-foreground: #e8ecef94;
+  --destructive: #ff6568;
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+
+  --color-olive-50: #eef5f5;
+  --color-olive-100: #dceaea;
+  --color-olive-200: #b9d5d6;
+  --color-olive-300: #8fb9bb;
+  --color-olive-400: #5f9da0;
+  --color-olive-500: #2a7a80;
+  --color-olive-600: #206266;
+  --color-olive-700: #1a4a4e;
+  --color-olive-800: #163d40;
+  --color-olive-900: #122f32;
+  --color-olive-950: #0a1c1e;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
